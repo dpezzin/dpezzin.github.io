@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        margin-top: 3px;
+        padding: 0 10px;
+      }
+      button {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px 10px;
+        line-height: 1;
+        color: #fff;
+        background: #345;
+        border: 0;
+        border-radius: 4px;
+        margin-left: 0.75em;
+      }
+      p {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script>
+      $(function() {
+        var iframe = $('#player1')[0];
+        var player = $f(iframe);
+        $('button.play').bind('click', function() {
+          player.api('play');
+        });
+        $('button.pause').bind('click', function() {
+          player.api('pause');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    
+    <iframe id="player1" src="https://player.vimeo.com/video/76979871?api=1&player_id=player1" width="630" height="354" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+    <div>
+      <button class="play">Play</button>
+      <button class="pause">Pause</button>
+    </div>
+  </body>
+</html>

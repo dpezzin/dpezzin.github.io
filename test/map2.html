@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      #map-canvas {
+        width: 90%;
+        height: 90%;
+        margin: 1em auto 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var myLatlng = new google.maps.LatLng(40.396133, -105.076096);
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        map.set('styles', [
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [
+              { color: '#900900' },
+              { weight: 1.2 }
+            ]
+          }, {
+            featureType: 'poi.school',
+            elementType: 'geometry',
+            stylers: [
+              { hue: '#fff700' },
+              { lightness: -15 },
+              { saturation: 50 }
+            ]
+          }
+        ]);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'NoCo JavaScript',
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: 'Intro to APIs<br>NoCo JavaScript'
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map,marker);
+        });
+        marker.setMap(map);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>

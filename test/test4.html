@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/styles/test.css" type="text/css">
+<script src="/scripts/test.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- This javascript function uses jquery -->
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+});
+</script>
+<!-- This is a standard javascript function -->
+<script>
+function myFunction() {
+    document.getElementById("demo").style.color = "red";
+}
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+<p id="demo" onclick="myFunction()">Click me to change my text color.</p>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button id="hide">Hide Paragraphs</button>
+<button id="open_dialog" onclick="openDialog()">Open Dialog</button>
+  <div id="dialog" title="Alert message" style="display: none">
+    <div class="ui-dialog-content ui-widget-content">
+      <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0"></span>
+        <label id="lblMessage">
+        </label>
+      </p>
+    </div>
+  </div>
+<script>
+$(document).ready(function(){
+    $("#open_dialog").click(function(){
+        ShowCustomDialog();
+    });
+});
+
+function ShowCustomDialog() {
+  ShowDialogBox('Warning', 'We have two dental offices. Which would you like to call?', 'Call Mohegan Lake', 'Call Terrytown', 'GoToAssetList', null);
+}
+
+function ShowDialogBox(title, content, btn1text, btn2text, functionText, parameterList) {
+  var btn1css;
+  var btn2css;
+
+  if (btn1text == '') {
+    btn1css = "hidecss";
+  } else {
+    btn1css = "showcss";
+  }
+
+  if (btn2text == '') {
+    btn2css = "hidecss";
+  } else {
+    btn2css = "showcss";
+  }
+  $("#lblMessage").html(content);
+
+  $("#dialog").dialog({
+    resizable: false,
+    title: title,
+    modal: true,
+    width: '400px',
+    height: 'auto',
+    bgiframe: false,
+    hide: {
+      effect: 'scale',
+      duration: 400
+    },
+
+    buttons: [{
+      text: btn1text,
+      "class": btn1css,
+      click: function() {
+
+        $("#dialog").dialog('close');
+
+      }
+    }, {
+      text: btn2text,
+      "class": btn2css,
+      click: function() {
+        $("#dialog").dialog('close');
+      }
+    }]
+  });
+}
+</script>
+</body>
+</html>

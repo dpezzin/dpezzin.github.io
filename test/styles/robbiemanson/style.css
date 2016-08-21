@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/*
+Theme Name: Dan Pezzin v1
+Theme URI: http://www.danpezzin.com/
+Description: primary style for danpezzin.com
+Version: 1.0
+Author: Dan Pezzin
+*/
+
+/*
+1. GLOBAL STYLES
+-------------------------------------------------------------------
+1.0 Master/Reset
+1.4 Links and lists
+ 
+ 
+2. MAIN PAGE ELEMENTS
+-------------------------------------------------------------------
+2.0 Wrapper
+2.4 Main content
+ 
+ 
+3. SPECIFIC PAGES
+-------------------------------------------------------------------
+3.6 Work
+*/
+ 
+ 
+ 
+/*
+1. GLOBAL STYLES
+------------------------------------------------------------------- */
+ 
+/* 1.0 Master/Reset
+----------------------------------------------- */
+
+address,blockquote,body,dd,del,dl,dt,div,fieldset,form,h2,h3,h4,h5,h6,hr,iframe,input,ins,legend,li,map,object,ol,p,pre,table,td
+
+,textarea,th,ul{margin:0;padding:0; vertical-align: baseline;}
+
+ 
+/* 1.4 Links and Lists
+----------------------------------------------- */
+
+a, a:link, a:visited {color: #2E3A4C; font-style: none; text-decoration: none;}
+a:hover, a:focus, a:active {color: #2E3A4C;}
+a:active {
+	outline: 0;
+	position: relative;
+	top: 1px;
+	text-decoration: none;
+}
+.main a:visited:hover {
+	color: #2E3A4C;
+}
+li {
+	display: list-item;
+}
+ol li {
+	list-style: decimal inside;
+}
+ul li {
+	list-style: disc inside;
+}
+dl {
+	margin-top: 22px;
+}
+dd {
+	margin-bottom: 22px;
+}
+ 
+ 
+
+2. TOP LEVEL ELEMENTS
+------------------------------------------------------------------- */
+ 
+/* 2.0 Wrapper
+----------------------------------------------- */
+#wrapper:after {
+	clear: both;  
+	display: block; 
+	height: 0; 
+	visibility: hidden;
+}
+#wrapper {
+	display: inline-block;
+}
+#wrapper {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+	padding: 1em 5% 2em 5%;
+	position: relative;
+	width: 100%;
+}
+
+ 
+/* 2.4 Main content
+----------------------------------------------- */
+.main {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline;
+	float: left;
+	font-size: 16px;
+	line-height: 1.5em;
+	overflow: visible;
+	position: relative;
+	width: 100%;
+}
+.main h2,
+.main h3 {
+	margin-top: 16px;
+}
+.main h2 {
+	margin-bottom: 0.25em;
+}
+.main h3 {
+	line-height: 1.08em;
+	margin: 2px 0;
+}
+.sidebar {
+	float: left;
+	padding-top: 2px;
+	width: 100%;
+}
+.main img {
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,0.35);
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.35);
+	box-shadow: 0 2px 3px rgba(0,0,0,0.35);
+	margin: 20px 0 3em 0;
+}
+.main p img {
+	margin: 15px 0 0 0;
+}
+.main a,
+.main a:link,
+.main a:visited {
+	line-height: 98%;
+}
+.main ol {
+	margin-bottom: 1.9em;
+}
+.sidebar .categories,
+span.category {
+	text-transform: capitalize;
+}
+ 
+/*
+3. SPECIFIC PAGES
+------------------------------------------------------------------- */
+
+/* 3.6 Work
+----------------------------------------------- */ 
+body.template_archive .category-work header,
+body.category-work header,
+body.page-template-work-php header {
+	margin-bottom: 40px;
+}
+#work_projects .project,
+.category-work .project {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+#work_projects:after {
+	content: ".";
+	clear: both;  
+	display: block; 
+	height: 0; 
+	visibility: hidden;
+}
+#work_projects {
+	display: inline-block;
+}
+#work_projects .project {
+	border-bottom: 1px dashed #ddd;
+	list-style: none;
+	margin-bottom: 2em;
+}
+#work_projects .project:last-child {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+.page-template-work-php .main {
+	padding-left: 0;
+	width: 100%;
+}
+.page-template-work-php .main img {
+  height: auto;
+  max-width: 700px;
+  width: 100%;
+  margin: 0;
+}
+.page-template-work-php .main p img {
+	margin-left: 0;
+}
+.page-template-work-php .sidebar {
+  float: none;
+	width: 100%;
+}
+.page-template-work-php .sidebar.fixed {
+  position: fixed;
+  top: 0;
+}
+.project_description {
+	margin-top: -1px;
+}
+.project_description .title {
+	color: #2E3A4C;
+	font-size: 24px;
+	line-height: 93%;
+}
+.project_description p {
+	font-size: 1em;
+	line-height: 160%;
+	margin-bottom: 0.85em;
+}
+.project_description h3 {
+	font: normal 1.2em/120% "skolar-1","skolar-2","Palatino","Times New Roman,Times,serif";
+	margin-bottom: 5px;
+	margin-top: 9px
+}
+.project_description .metadata {
+  margin-bottom: 1em;
+}
+.project_description .metadata:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+/* IE6 */
+*:first-child+html .project_description .metadata {
+  zoom: 1;
+}
+.project_description .metadata li {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  float: left;
+	font-size: 1em;
+	list-style: none;
+	margin-bottom: -0.12em;
+	padding-right: 1em;
+	width: 50%;
+}
+.project_description .metadata li:first-child {
+  padding-right: 1em;
+}
+.project_description .metadata li:nth-child(2) {
+  display: none;
+}
+.project_description .emdash {
+  display: none;
+}
+.project_description .metadata p {
+	line-height: 150%;
+}
+.project .main p {
+	margin-bottom: 2em;
+}
+.category-work #project-1328 .main img,
+.page-template-work-php #project-1328 .main img {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	margin: 0;
+}
+.category-work .main img.wp-image-1501,
+.page-template-work-php .main img.wp-image-1501 /* Depot for iPhone */ {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  height: 431px;
+  left: 612px;
+  position: absolute;
+  top: 490px;
+  width: 221px;
+}
+.category-work .main img.bare {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.category-work .main img.wp-image-1732,
+.page-template-work-php .main img.wp-image-1732 /* BuildBoard for iPhone */ {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  height: 332px;
+  left: 655px;
+  position: absolute;
+  top: 350px;
+  width: 170px;
+}
+@media only screen and (min-width: 580px) {
+/*  #wrapper {
+    padding-bottom: 3em;
+    padding-top: 2em;
+  }*/
+@media only screen and (min-width: 660px) {
+/*  #wrapper,
+  #footer_content {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }*/
+@media only screen and (min-width: 740px) {
+/*  #wrapper,
+  #footer_content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }*/
+@media only screen and (min-width: 800px) {
+/*  #wrapper,
+  #footer_content {
+    padding-left: 15%;
+    padding-right: 15%;
+  }*/
+@media only screen and (min-width: 900px) {
+/*  #wrapper,
+  #footer_content {
+    padding-left: 18%;
+    padding-right: 18%;
+  }*/
+@media only screen and (min-width: 960px) {
+  body {
+    -webkit-text-size-adjust: auto;
+  }
+  h2 {
+  	font-size: 1.429em; /* 20px */
+  }
+  h3 {
+  	font-size: 1.429em; /* 20px */
+  }
+  h1 .subtitle,
+  h2 .subtitle,
+  h3 .subtitle {
+    display: inline;
+    margin: 0;
+  }
+  #wrapper {
+    -webkit-box-sizing: content-box;
+  	-moz-box-sizing: content-box;
+  	box-sizing: content-box;
+  	padding: 16px 10px 30px 10px;
+    width: 940px
+  }
+  .main {
+    -webkit-box-sizing: content-box;
+  	-moz-box-sizing: content-box;
+  	box-sizing: content-box;
+  	margin: 0 20px 0 0;
+    padding-left: 160px;
+    width: 540px;
+  }
+  
+  /* .sidebar class is used for asides */
+  .sidebar {
+    width: 220px;
+  }
+  .about_me {
+  	width: 300px;
+  }
+  .article_header .title {
+  	line-height: 50px;
+  	margin: 0 0 0 160px;
+  	width: 700px;
+  }
+  li.article_header .title {
+  	margin-right: 20px;
+  	width: 460px;
+  }
+  li.article_header .excerpt {
+  	display: inline;
+  	float: left;
+  	line-height: 16px;
+  	width: 240px;
+  }
+  .category-work .main,
+  .page-template-work-php .main {
+  	width: 700px;
+  }
+  .category-work .sidebar,
+  .page-template-work-php .sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+  	width: 220px;
+  }
+  .webkit li.article_header .title {
+  	margin-top: -22px;
+  }
+  .webkit li.article_header .excerpt {
+  	margin-top: -21px;
+  }
+  .project .main p {
+    margin-bottom: 2em;
+  }
+  .project_description p {
+    font-size: 13px;
+  }
+  
+  /* .metadata is the class used for website link beneath the course descriptions*/
+  /* .project_description is the class used for course descriptions*/
+  .project_description .metadata {
+  	margin-bottom: -6px;
+  }
+  .project_description .metadata li {
+    -webkit-box-sizing: content-box;
+  	-moz-box-sizing: content-box;
+  	box-sizing: content-box;
+    float: none;
+  	padding-right: 0;
+  	width: 100%;
+  }
+  .project_description .metadata li:first-child {
+    padding-right: 0;
+  }
+  .project_description .metadata li:nth-child(2) {
+    display: block;
+  }
+  
+  /* .em dash is dashed line below each project*/
+  .project_description .emdash {
+    display: block;
+  }
+  #work_projects .project {
+  	margin-bottom: 2.5em;
+  }

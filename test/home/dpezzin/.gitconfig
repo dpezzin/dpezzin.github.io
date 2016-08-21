@@ -1,0 +1,26 @@
+[user]
+	email = remote@ircary.com
+	name = remote_changes
+[core]
+	quotepath = true
+	autocrlf = false
+	safecrlf = false
+[alias]
+	alias-version = v4.4.1
+	s = status
+	h = !sh -c 'git push && git status'
+	hh = push
+	l = !sh -c 'git pull && git status'
+	ll = pull
+	lh = !sh -c 'git pull && git push && git status'
+	a = add --all
+	c = commit -m
+	cd = commit -m \"...\"
+	cu = commit -m \"Uploads\"
+	l-u = pull a updates:updates
+	f-u = fetch a updates:updates
+	acu = !sh -c 'git add --all && git commit -m \"Uploads\" && git status'
+	acuh = !sh -c 'git add --all && git commit -m \"Uploads\" && git push && git status'
+	b = branch -a
+	co = checkout
+	com = checkout master
